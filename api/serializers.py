@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from api.models import Company, Employee
+from django import forms
 
 class CompanySerializer(serializers.HyperlinkedModelSerializer):
     company_id = serializers.ReadOnlyField()
@@ -14,3 +15,11 @@ class EmployeeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Employee
         fields = "__all__"
+
+class StudentSerializer(serializers.Serializer):
+    name = serializers.CharField(max_Length=100)
+    roll = serializers.IntegerField()
+    city = serializers.CharField(max_Length = 100)
+
+
+
