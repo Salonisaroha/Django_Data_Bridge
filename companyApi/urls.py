@@ -18,9 +18,10 @@ from django.contrib import admin
 from django.urls import path, include
 from api import views
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/v1/", include('api.urls')),
-    path("stuinfo/", views.student_detail),
+    path("stuinfo/<int:pk>", views.student_detail),  # Updated view name to lowercase
+    path("stuinfo/", views.student_list),  # Updated view name to lowercase
 ]
+

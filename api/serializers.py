@@ -17,9 +17,9 @@ class EmployeeSerializer(serializers.HyperlinkedModelSerializer):
         fields = "__all__"
 
 class StudentSerializer(serializers.Serializer):
-    name = serializers.CharField(max_Length=100)
+    name = serializers.CharField(max_length=100)
     roll = serializers.IntegerField()
-    city = serializers.CharField(max_Length = 100)
+    city = serializers.CharField(max_length = 100)
 
 
 
