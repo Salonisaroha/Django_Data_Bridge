@@ -23,5 +23,6 @@ urlpatterns = [
     path("api/v1/", include('api.urls')),
     path("stuinfo/<int:pk>", views.student_detail),  # Updated view name to lowercase
     path("stuinfo/", views.student_list),  # Updated view name to lowercase
+    path('stucreate/',views.student_create),
 ]
 

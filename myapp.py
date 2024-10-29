@@ -2,9 +2,16 @@
 
 
 import requests # type: ignore
-URL = "http://127.0.0.1:8000/stuinfo/1"
+import json
+URL = "http://127.0.0.1:8000/stucreate/"
 
-r = requests.get(url = URL)
+data={
+    'name':'Sonam',
+    'roll': 101,
+    'city':'Ranchi'
+}
+json_data = json.dumps(data)
 
+r = requests.post(url = URL, data = json_data)
 data = r.json()
 print(data)
