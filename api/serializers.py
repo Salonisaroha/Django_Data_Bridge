@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from api.models import Company, Employee, Student
+from api.models import Company, Employee, Student, Manager
 from django import forms
 
 class CompanySerializer(serializers.HyperlinkedModelSerializer):
@@ -23,6 +23,12 @@ class StudentSerializer(serializers.Serializer):
 
     def create(self, validate_data):
        return Student.objects.create(**validate_data) 
+
+class ManagerSerializer(serializers.Serializer):
+    
+    name = serializers.CharField(max_length=100)
+    aim = serializers.CharField(max_length=100)
+    city = serializers.CharField(max_length=100)
 
 
 
